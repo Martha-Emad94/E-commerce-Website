@@ -1,4 +1,4 @@
-import React from 'react'
+
 import BrandContainer from '../../components/Brands/BrandContainer'
 import Pagination from '../../components/Uility/Pagination'
 
