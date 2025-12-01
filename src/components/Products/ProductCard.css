@@ -1,0 +1,114 @@
+/* تأثيرات البطاقات */
+.product-card {
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    border-color: #007bff;
+}
+
+.product-card:active {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+
+/* تحسين مظهر الصورة */
+.product-card .card-img-top {
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+/* تحسين مظهر الأزرار */
+.product-card .btn {
+    transition: all 0.2s ease;
+}
+
+.product-card .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* تحسين مظهر البادجات */
+.product-card .badge {
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.product-card .badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* تحسين مظهر العنوان */
+.product-card .card-title {
+    transition: color 0.3s ease;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.product-card:hover .card-title {
+    color: #007bff;
+}
+
+/* تحسين مظهر السعر */
+.product-card .fw-bold {
+    font-size: 1.1rem;
+    color: #28a745;
+}
+
+/* تحسين مظهر التقييم */
+.product-card .badge.bg-success {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+}
+
+/* تحسين مظهر الوصف */
+.product-card .card-text {
+    line-height: 1.5;
+    color: #6c757d;
+}
+
+/* تحسين مظهر زر المفضلة */
+.product-card .btn-outline-danger,
+.product-card .btn-danger {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+/* تحسين مظهر بادج الخصم */
+.product-card .badge.bg-danger {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+    font-weight: 600;
+}
+
+/* تحسين مظهر معلومات المخزون */
+.product-card small.text-muted {
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* تحسين مظهر البطاقة عند عدم توفر المنتج */
+.product-card.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.product-card.disabled:hover {
+    transform: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}

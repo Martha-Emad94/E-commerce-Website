@@ -1,35 +1,50 @@
-import React from 'react'
-import { Card, Col } from 'react-bootstrap'
-import labtop from "../../images/labtop.png";
+import { Card, Col, Row } from 'react-bootstrap';
 import favoff from "../../images/fav-off.png";
-import favon from "../../images/fav-on.png";
 import rate from "../../images/rate.png";
+import { useEffect, useState } from 'react';
+import instanceAxios from '../../axios/instanceaxios';
+import './ProductCard.css';
+
 const ProductCard = () => {
-    return (
-    <Col xs="6" sm="6" md="4" lg="3" className="d-flex my-4 ">
-        <Card className=" my-2 product">
-        <div className="productcard">
-          <img src={labtop} className="product-img"/>
-          <div className="d-flex justify-content-between m-2">
-          <div className="title">Labtop</div>
-          <img className="favoff" src={favoff}/>
-          </div>
-          <p>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <div className="d-flex justify-content-between m-2">
-          <div  className="d-flex">
-          <img className="rate mt-1" src={rate}/>
-          <p className="productrate mx-1">4.5</p>
-          </div>
-          
-          <p className="productprice">800$</p>
-          </div>
-        </div>
-      </Card>
-      </Col>
-    )
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    instanceAxios.get('/products')
+      .then(res => setProducts(res.data.products))
+      .catch(err => console.error(err));
+  }, []);
+
+  return (
+    <Row className="g-4 p-3">
+      {
+        products.slice(0,4).map((product, index) => (
+          <Col key={index} xs={12} sm={6} md={4} lg={3}>
+            <Card className="product h-100">
+              <img 
+                src={product.images[0]} 
+                alt={product.title} 
+                className="product-img"
+              />
+              <div className="productcard">
+                <div className="d-flex justify-content-between align-items-center mb-2">
+                  <div className="title">{product.title}</div>
+                  <img className="favoff" src={favoff} alt="favorite icon" />
+                </div>
+                <p className="product-description">{product.description}</p>
+                <div className="d-flex justify-content-between align-items-center mt-auto">
+                  <div className="d-flex align-items-center">
+                    <img className="rate" src={rate} alt="rate icon" />
+                    <p className="productrate mb-0 ms-1">{product.rating}</p>
+                  </div>
+                  <p className="productprice mb-0">{product.price}$</p>
+                </div>
+              </div>
+            </Card>
+          </Col>
+        ))
+      }
+    </Row>
+  )
 }
 
-export default ProductCard
+export default ProductCard;

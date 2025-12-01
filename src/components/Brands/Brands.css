@@ -1,0 +1,56 @@
+/* تأثيرات التفاعل للعلامات التجارية */
+.Card-brands {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 15px;
+    text-align: center;
+    background: white;
+}
+
+.Card-brands:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.Card-brands:active {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* تحسين مظهر الصورة */
+.Card-img {
+    transition: transform 0.3s ease;
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: contain;
+}
+
+.Card-brands:hover .Card-img {
+    transform: scale(1.1);
+}
+
+/* تحسين مظهر العنوان */
+.Card-title {
+    transition: color 0.3s ease;
+    font-weight: 600;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.Card-brands:hover .Card-title {
+    color: #007bff;
+}
+
+/* Carousel container styles */
+.react-multi-carousel-list {
+  padding: 0 20px;
+}
+
+.react-multi-carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

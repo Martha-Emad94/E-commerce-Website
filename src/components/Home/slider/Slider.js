@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
-import slider1 from "../../images/slider1.png";
-import slider4 from "../../images/slider4.png";
-import prod3 from "../../images/prod3.png";
-import prod4 from "../../images/prod4.png";
+import  { useState } from 'react'
+import slider1 from "../../../images/slider1.png";
+import slider4 from "../../../images/slider4.png";
+import prod3 from "../../../images/prod3.png";
+import prod4 from "../../../images/prod4.png";
 import { Carousel} from 'react-bootstrap'
+import './Slider.css'; // Assuming you have a CSS file for styling
 
 const Slider = () => {
    
@@ -18,7 +19,7 @@ const Slider = () => {
         <Carousel activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item className="slide-bg1" interval={1000}>
         <div className="d-flex flex-row justify-content-center align-items-center">
-          <img className="slide-img" src={slider1} />
+          <img className="slide-img" src={slider1} alt=''/>
           <Carousel.Caption >
           <div>
             <h3 className="slide-label">There is a big discount</h3>
@@ -30,7 +31,7 @@ const Slider = () => {
 
         <Carousel.Item className="slide-bg2" interval={1000}>
         <div className="d-flex flex-row justify-content-center align-items-center slide">
-          <img className="slide-img" src={slider4} />
+          <img className="slide-img" src={slider4} alt=''/>
           <Carousel.Caption >
           <div>
             <h3 className="slide-label">There is a big discount</h3>
@@ -43,7 +44,7 @@ const Slider = () => {
         
         <Carousel.Item className="slide-bg3" interval={1000}>
         <div className="d-flex flex-row justify-content-center align-items-center">
-          <img className="slide-img"  src={prod3}/>
+          <img className="slide-img"  src={prod3} alt=''/>
           <Carousel.Caption >
           <div>
             <h3 className="slide-label">There is a big discount</h3>
@@ -58,7 +59,7 @@ const Slider = () => {
         
         <Carousel.Item className="slide-bg4" interval={1000}>
         <div className="d-flex flex-row justify-content-center align-items-center">
-          <img className="slide-img" src={prod4}/>
+          <img className="slide-img" src={prod4} alt=''/>
           <Carousel.Caption >
           <div>
             <h3 className="slide-label">There is a big discount</h3>
